@@ -6,11 +6,29 @@
     <title>Importowanie SkryptówJS & React R09-01</title>
   </head>
   <body>
-    <!-- standard -->
+    <!-- Standardowe ładowanie skryptu -->
     <script src="js/index.js"></script>
-    <!--  async -->
+    <!-- 
+        Ten skrypt jest ładowany w tradycyjny sposób. 
+        Przeglądarka zatrzyma parsowanie HTML do momentu, 
+        aż skrypt zostanie pobrany i wykonany. Może to opóźnić 
+        wyświetlanie zawartości strony. 
+    -->
+    <!-- Ładowanie skryptu z atrybutem async -->
     <script src="js/index-async.js" async></script>
-    <!-- defer -->
+    <!-- 
+        Skrypt z atrybutem "async" jest pobierany równocześnie z parsowaniem dokumentu HTML, 
+        ale jego wykonanie następuje natychmiast po pobraniu, co może przerwać dalsze 
+        parsowanie HTML. Kolejność wykonania skryptów async nie jest gwarantowana 
+        i zależy od tego, który zostanie szybciej pobrany.
+-->
+    <!-- Ładowanie skryptu z atrybutem defer -->
     <script src="js/index-defer.js" defer></script>
+    <!-- 
+    Skrypt z atrybutem "defer" jest również pobierany równocześnie z parsowaniem dokumentu HTML, 
+    ale jego wykonanie następuje dopiero po zakończeniu całkowitego parsowania dokumentu. 
+    Dzięki temu nie przerywa on ładowania strony. Skrypty z defer wykonają się w takiej kolejności, 
+    w jakiej zostały umieszczone w kodzie HTML.
+-->
   </body>
 </html>
